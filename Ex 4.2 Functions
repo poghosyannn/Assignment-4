@@ -1,0 +1,56 @@
+function Factorial(n){
+    let factorial=1;
+    for(let i=1; i<=n; i++){
+        factorial*=i;
+    }    
+    return factorial
+}   
+
+
+function Gcd(a, b){
+    let dividend = a;
+    let divisor = b;
+    let remainder = 1;
+    // Euclid's algorithm
+    while(dividend%divisor>0){
+        remainder = dividend%divisor;
+        dividend = divisor;
+        divisor = remainder;   
+    }
+    return divisor;
+} 
+
+
+
+function Lcm(a, b){
+
+    let lcm = a*b/Gcd(a, b);
+    return lcm;
+}
+
+
+function toHexadecimal(n){
+    let reverse="";
+    let result="";
+    let letters="ABCDEF";
+
+    while(n>0){
+        if(n%16>=10){
+            reverse+=letters[n%16-10];
+        } else {
+            reverse+=n%16;
+        }
+        n=Math.floor(n/16);
+    }
+    for(let index=reverse.length-1; index>=0; index--){
+        result+=reverse[index];
+    }
+    return result;
+}
+
+module.exports = {
+    Factorial,
+    Gcd,
+    Lcm,
+    toHexadecimal,
+} 
