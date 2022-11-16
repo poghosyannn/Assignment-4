@@ -1,0 +1,5 @@
+const f = require('./ex42functions');
+
+console.log(f.Factorial(5));
+console.log(f.Gcd(80,44));
+console.log(f.Lcm(40, 15));
